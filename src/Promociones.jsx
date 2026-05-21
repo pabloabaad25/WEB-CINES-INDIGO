@@ -1,5 +1,4 @@
 import React from 'react';
-import { Ticket, Star, Coffee, Users, Gift, Calendar } from 'lucide-react';
 
 function Promociones() {
   const promocionesCine = [
@@ -7,36 +6,31 @@ function Promociones() {
       id: 1,
       titulo: "GANA ENTRADA DOBLE: THE MANDALORIAN",
       descripcion: "Regístrate en uttopion.es y compite en Football Runner del 11 al 18 de mayo. ¡Si eres el primero, ganas una entrada doble! Este es el camino.",
-      icono: <Star className="promo-icon" />,
-      clase: "promo-destacada"
+      emoji: "⭐"
     },
     {
       id: 2,
       titulo: "MAYORES DE 65 AÑOS - 4€",
       descripcion: "De lunes a jueves, disfruta del cine al mejor precio. (Se requiere documento acreditativo).",
-      icono: <Users className="promo-icon" />,
-      clase: "promo-info"
+      emoji: "👥"
     },
     {
       id: 3,
       titulo: "JUEVES: DÍA DEL ESPECTADOR",
       descripcion: "Todos los jueves (excepto festivos) disfruta de un precio fantástico en todas tus películas.",
-      icono: <Calendar className="promo-icon" />,
-      clase: "promo-info"
+      emoji: "📅"
     },
     {
       id: 4,
       titulo: "INDIGOS DAYS - 5,50€",
       descripcion: "¡Los miércoles son nuestros! Oferta no acumulable, válida solo para sesiones estándar.",
-      icono: <Ticket className="promo-icon" />,
-      clase: "promo-info"
+      emoji: "🎟️"
     },
     {
       id: 5,
       titulo: "BONO CULTURAL JOVEN",
       descripcion: "Usa tu Bono Cultural en nuestra taquilla y vive la mejor experiencia en pantalla grande.",
-      icono: <Gift className="promo-icon" />,
-      clase: "promo-info"
+      emoji: "🎁"
     }
   ];
 
@@ -49,36 +43,45 @@ function Promociones() {
   ];
 
   return (
-    <div className="contenedor-promociones">
-      <header className="cabecera-promos">
-        <h1>PROMOCIONES Y OFERTAS<span>.</span></h1>
-        <p>Aprovecha nuestros descuentos exclusivos y disfruta del mejor cine.</p>
-      </header>
+    <div className="container">
+      {/* Cabecera normal */}
+      <div style={{ marginBottom: '30px' }}>
+        <h1 style={{ fontSize: '2rem', marginBottom: '10px' }}>Promociones y Ofertas</h1>
+        <p style={{ color: 'var(--texto-gris)' }}>Aprovecha nuestros descuentos exclusivos y disfruta del mejor cine.</p>
+      </div>
 
-      <section className="grid-promos">
+      {/* Grid de promociones con estilos planos */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '5px' }}>
         {promocionesCine.map(promo => (
-          <div key={promo.id} className={`tarjeta-promo ${promo.clase}`}>
-            {promo.icono}
-            <h3>{promo.titulo}</h3>
-            <p>{promo.descripcion}</p>
+          <div key={promo.id} style={{ background: 'var(--fondo-tarjeta)', border: '1px solid var(--borde)', padding: '20px', borderRadius: '4px' }}>
+            <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '10px' }}>{promo.emoji}</span>
+            <h3 style={{ fontSize: '1.1rem', margin: '10px 0', color: '#fff' }}>{promo.titulo}</h3>
+            <p style={{ fontSize: '0.9rem', color: 'var(--texto-gris)' }}>{promo.descripcion}</p>
           </div>
         ))}
-      </section>
+      </div>
 
-      <section className="seccion-combos">
-        <div className="titulo-combos">
-          <Coffee size={32} />
-          <h2>SNACK BAR – COMBOS</h2>
-        </div>
-        <div className="tabla-combos">
-          {combos.map((combo, index) => (
-            <div key={index} className="fila-combo">
-              <span>{combo.nombre}</span>
-              <span className="precio-combo">{combo.precio}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Seccion Bar con una tabla clasica de HTML */}
+      <div style={{ marginTop: '50px' }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '20px', color: '#fff' }}>🍿 SNACK BAR – COMBOS</h2>
+        
+        <table style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--fondo-tarjeta)', borderRadius: '4px', overflow: 'hidden' }}>
+          <thead>
+            <tr style={{ background: '#333', textAlign: 'left' }}>
+              <th style={{ padding: '12px' }}>Menú / Producto</th>
+              <th style={{ padding: '12px', textAlign: 'right' }}>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            {combos.map((combo, index) => (
+              <tr key={index} style={{ borderBottom: '1px solid var(--borde)' }}>
+                <td style={{ padding: '12px', color: 'var(--texto-gris)' }}>{combo.nombre}</td>
+                <td style={{ padding: '12px', textAlign: 'right', fontWeight: 'bold', color: 'var(--color-principal)' }}>{combo.precio}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

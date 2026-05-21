@@ -1,22 +1,38 @@
+import React from 'react';
+
 function Contacto() {
   return (
-    <section className="p-6 bg-gray-900 text-white">
-      <h1 className="text-3xl mb-4">Contacto</h1>
+    <section className="contenedor-promociones">
+      <h1 className="titulo-seccion">Contacto</h1>
 
-      <form className="flex flex-col gap-3 max-w-md">
-        <input type="text" placeholder="Nombre" className="p-2 text-black" />
-        <input type="email" placeholder="Email" className="p-2 text-black" />
-        <textarea placeholder="Mensaje" className="p-2 text-black"></textarea>
+      {/* Formulario de contacto basico */}
+      <form style={{ display: 'flex', flexDirection: 'column', gap: '15px', maxWidth: '400px', margin: '20px 0' }}>
+        <input 
+          type="text" 
+          placeholder="Nombre" 
+          style={{ padding: '10px', borderRadius: '4px', border: '1px solid var(--borde)', background: 'var(--fondo-tarjeta)', color: '#fff' }} 
+        />
+        <input 
+          type="email" 
+          placeholder="Email" 
+          style={{ padding: '10px', borderRadius: '4px', border: '1px solid var(--borde)', background: 'var(--fondo-tarjeta)', color: '#fff' }} 
+        />
+        <textarea 
+          placeholder="Mensaje" 
+          rows="5"
+          style={{ padding: '10px', borderRadius: '4px', border: '1px solid var(--borde)', background: 'var(--fondo-tarjeta)', color: '#fff', resize: 'none' }}
+        ></textarea>
 
-        <button className="bg-red-600 p-2">Enviar</button>
+        <button type="submit" className="custom-btn">Enviar Mensaje</button>
       </form>
 
-      <div className="mt-6">
-        <p>Horario: 10:00 - 23:00</p>
-        <p>Email: contacto@indigo.com</p>
+      {/* Datos de interes */}
+      <div style={{ marginTop: '30px', color: 'var(--texto-secundario)', fontSize: '0.95rem' }}>
+        <p style={{ marginBottom: '5px' }}><strong>Horario:</strong> 10:00 - 23:00</p>
+        <p><strong>Email:</strong> contacto@indigo.com</p>
       </div>
     </section>
-  )
+  );
 }
 
-export default Contacto
+export default Contacto;

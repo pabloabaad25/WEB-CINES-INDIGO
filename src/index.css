@@ -1,13 +1,14 @@
-/* 2. VARIABLES DE DISEÑO (Colores Aura Índigo) */
+/* 1. COLORES Y VARIABLES */
 :root {
-  --accent: #b621fe;        /* Púrpura Aura */
-  --accent-light: #00acee;  /* Ciano Aura */
-  --border: rgba(255, 255, 255, 0.1);
-  --shadow: 0 8px 32px 0 rgba(182, 33, 254, 0.37);
-  --glass: rgba(0, 0, 0, 0.6);
+  --color-principal: #e50914; /* Rojo cine normal */
+  --fondo: #141414;
+  --fondo-tarjeta: #222222;
+  --borde: #333333;
+  --texto: #ffffff;
+  --texto-gris: #aaaaaa;
 }
 
-/* 3. BASE STYLES */
+/* 2. ESTILOS BASE */
 * {
   margin: 0;
   padding: 0;
@@ -15,11 +16,10 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
-  overflow-x: hidden;
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 #root {
@@ -27,120 +27,58 @@ body {
   min-height: 100vh;
 }
 
-/* 4. COMPONENTS (Navbar y Layout Global) */
-
+/* 3. MENU DE NAVEGACION */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Espacio para logo y acciones */
+  justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 15px 5%;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid var(--borde);
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
 }
 
-/* Botones Base con Glassmorphism */
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* 4. BOTONES DEL PROYECTO */
 .custom-btn {
-  width: 140px;
-  height: 45px;
+  background-color: var(--color-principal);
+  color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 10px;
-  font-weight: 600;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  background: transparent;
-  color: #fff;
+  transition: background 0.2s;
 }
 
-.custom-btn span {
-  position: relative;
-  z-index: 2;
+.custom-btn:hover {
+  background-color: #b80c14; /* Rojo un poco mas oscuro al pasar el raton */
 }
 
-/* Variación: Button 3 (Estilo Ciano) */
+/* Variaciones por si los componentes llaman a btn-3 o btn-15 */
 .btn-3 {
-  background: linear-gradient(0deg, var(--accent-light), #027efb);
-  box-shadow: 0 4px 15px rgba(0, 172, 238, 0.3);
+  background-color: #007efb; /* Azul normal de filtro */
 }
 
 .btn-3:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 172, 238, 0.5);
+  background-color: #0266cc;
 }
 
-/* Variación: Button 15 (Estilo Rojo/Indigo Premium) */
 .btn-15 {
-  background: #c20e0e; /* Color base corporativo */
-  color: white;
-  overflow: hidden;
+  background-color: var(--color-principal);
 }
 
-.btn-15:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 100%;
-  background: #ffffff;
-  transition: 0.3s ease;
-  z-index: 1; /* Detrás del texto */
-}
-
-.btn-15:hover:after {
-  width: 100%;
-  left: 0;
-  right: auto;
-}
-
-.btn-15:hover {
-  color: #c20e0e; /* El texto cambia al color de fondo original cuando el blanco lo cubre */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-/* 5. UTILITIES */
-
+/* 5. CONTENEDOR GENERAL */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Títulos con Efecto Aura */
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Custom Scrollbar Premium */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--accent), var(--accent-light));
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #fff;
-}
-
-/* Soporte para animaciones suaves */
-html {
-  scroll-behavior: smooth;
+  padding: 30px 20px;
 }
