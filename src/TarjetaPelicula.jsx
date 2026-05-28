@@ -5,7 +5,7 @@ function TarjetaPelicula({ pelicula }) {
     <div className="tarjeta-pelicula">
       {/* Poster */}
       <img src={pelicula.poster} alt={pelicula.titulo} className="poster-cine" />
-      
+
       {/* Informacion de la pelicula */}
       <div style={{ marginTop: '10px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--texto-gris)' }}>
@@ -17,12 +17,12 @@ function TarjetaPelicula({ pelicula }) {
         <p style={{ color: 'var(--color-principal)', fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '10px' }}>
           Duración: {pelicula.duracion}
         </p>
-        
+
         <p style={{ fontSize: '0.85rem', color: 'var(--texto-gris)', marginBottom: '15px' }}>
           {pelicula.sinopsis}
         </p>
 
-        {/* Listado simple de los horarios o dias */}
+        {/* Listado de los horarios o dias */}
         <div style={{ marginBottom: '15px' }}>
           <strong style={{ fontSize: '0.8rem', color: '#fff', display: 'block', marginBottom: '5px' }}>Sesiones / Días:</strong>
           <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap' }}>
@@ -36,10 +36,10 @@ function TarjetaPelicula({ pelicula }) {
       </div>
 
       {/* Boton al trailer */}
-      <a 
-        href={pelicula.trailer} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href={pelicula.trailer}
+        target="_blank"
+        rel="noopener noreferrer"
         className="custom-btn"
         style={{ textDecoration: 'none', display: 'block', textAlign: 'center', width: '100%', marginTop: '10px' }}
       >

@@ -1,14 +1,25 @@
-function BarraNavegacion() {
+import React from 'react'; // importar libreria de react
+
+function BarraNavegacion() { 
+  const estiloBoton = {
+    fontFamily: "'Space Grotesk', 'Rajdhani', sans-serif", 
+    letterSpacing: '1px', 
+    textTransform: 'uppercase', 
+    fontSize: '0.85rem'
+  };
+
   return (
-    <nav className="navbar"> {/* Cambiado class por className para React */}
-      <button className="custom-btn btn-3"><span>Cartelera</span></button>
-      <button className="custom-btn btn-3"><span>Películas</span></button>
-      <button className="custom-btn btn-15"><span>Entradas</span></button>
-      <button className="custom-btn btn-15"><span>Contacto</span></button>
-      <button className="custom-btn btn-15"><span>Promociones</span></button>
+    // contenedor con los estilos 
+    <nav className="navbar" style={{ justifyContent: 'center', gap: '10px' }}> 
+      
+      <button className="custom-btn" style={estiloBoton}>Cartelera</button>
+      <button className="custom-btn" style={estiloBoton}>Películas</button>
+      <button className="custom-btn" style={estiloBoton}>Entradas</button>
+      <button className="custom-btn" style={estiloBoton}>Contacto</button>
+      <button className="custom-btn" style={estiloBoton}>Promociones</button>
 
     </nav>
-  )
+  );
 }
 
-export default BarraNavegacion
+export default BarraNavegacion;

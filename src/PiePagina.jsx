@@ -1,6 +1,8 @@
 import React from 'react';
+// componente Link para buscar en interno
 import { Link } from 'react-router-dom';
 
+// pie de pagina
 const PiePagina = () => {
   return (
     <footer className="footer-indigo">
@@ -27,8 +29,9 @@ const PiePagina = () => {
         </div>
       </div>
       
+      {/* muestra el año actual de forma dinámica */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Cines Índigo - Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Cines Índigo - Todos los derechos reservados</p>
       </div>
     </footer>
   );

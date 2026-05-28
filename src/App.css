@@ -119,7 +119,6 @@ body {
   gap: 20px;
 }
 
-/* Estilo simple para los botones que te pedía el index.css viejo */
 .custom-btn {
   background: var(--acento);
   color: white;

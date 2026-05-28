@@ -1,5 +1,6 @@
 import React from 'react';
 
+// lista de peliculas y info.
 const peliculas = [
   {
     titulo: "ICE AGE: PUNTO DE EBULLICIÓN",
@@ -38,24 +39,31 @@ const peliculas = [
   }
 ];
 
+// flecha para ensenñar los estrenos
 export const ProximosEstrenos = () => {
   return (
     <section className="contenedor-promociones">
+      {/* título y descripción de la pagina */}
       <h1 className="titulo-seccion">Próximos Estrenos 2027</h1>
       
       <p style={{ color: 'var(--texto-secundario)', marginBottom: '30px', fontSize: '0.95rem' }}>
         Avance de las películas que llegarán próximamente a nuestras salas.
       </p>
       
+      {/* distribuye las peliculas en formato de tabla */}
       <div className="grid-peliculas">
         {peliculas.map((cine, index) => (
           <div key={index} className="pelicula-card">
             <div>
+              {/* fecha del estreno */}
               <span className="counter">{cine.estreno}</span>
+              
               <h3 style={{ marginTop: '15px', color: '#fff', fontSize: '1.2rem' }}>{cine.titulo}</h3>
+              
               <p style={{ fontSize: '0.85rem', color: 'var(--acento)', fontWeight: 'bold', marginTop: '5px' }}>
                 {cine.genero}
               </p>
+              
               <p style={{ fontSize: '0.9rem', color: 'var(--texto-secundario)', margin: '15px 0' }}>
                 {cine.descripcion}
               </p>

@@ -1,17 +1,21 @@
+// LIBRERIAS
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
+// IMPORTACIONES DE LAS PAGINAS
 import Inicio from './Inicio';
 import { ProximosEstrenos } from './Estrenos';
 import Cartelera from './Cartelera';
 import Contacto from './Contacto';
 import PiePagina from './PiePagina';
 
+// ESTRUCTURA DEL HEADER Y FOOTER
 const Layout = ({ children }) => (
   <div className="main-app">
     {/* MENU DE NAVEGACION */}
     <header className="navbar">
       <div className="logo-section">
+        {/* Enlace con logo para volver al inicio */}
         <Link to="/" style={{ textDecoration: 'none' }}>
           <div className="logo-text">CINES ÍNDIGO</div>
         </Link>
@@ -19,6 +23,7 @@ const Layout = ({ children }) => (
       
       <nav className="header-nav">
         <ul className="nav-menu-horizontal">
+          {/* Enlaces internos con etiqueta de Link de react-router-dom */}
           <li><Link to="/" className="nav-link">Inicio</Link></li>
           <li><Link to="/estrenos" className="nav-link">Estrenos 2027</Link></li>
           <li><Link to="/cartelera" className="nav-link">Cartelera</Link></li>
@@ -26,9 +31,6 @@ const Layout = ({ children }) => (
         </ul>
       </nav>
 
-      <div className="topbar-actions">
-        <button className="custom-btn">LOGIN</button>
-      </div>
     </header>
 
     {/* CONTENIDO DE CADA PAGINA */}
@@ -41,10 +43,12 @@ const Layout = ({ children }) => (
   </div>
 );
 
+/* Componente principal*/
 function App() {
   return (
     <Router>
       <Layout>
+        {/* Definición de rutas de cada componente */}
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/estrenos" element={<ProximosEstrenos />} />

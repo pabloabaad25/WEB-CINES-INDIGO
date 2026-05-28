@@ -1,3 +1,4 @@
+// array para las peliculas
 const peliculas = [
   {
     id: 1,
