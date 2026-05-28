@@ -1,11 +1,11 @@
-# CINES INDIGO - PÁGINA WEB PABLO ABAD ORTEGA
+# Cines Índigo - Aura Cinematográfica
 
-Esta web la he creado para los usuarios que quieran ver mi cartelera de mis Cines Indigo al rededor de España!
+Aplicación web interactiva para la gestión de la cartelera, próximos estrenos (2027) y promociones. Desarrollada con React.
 
-# INSTRUCCIONES PARA EL SETUP
+## Instrucciones de Setup (Instalación local)
 
-Para ejecutar el proyecto en el ordenador, haz lo siguiente:
+Sigue estos pasos para ejecutar el proyecto:
 
 1. **Clonar el repositorio:**
-```bash
-git clone [https://github.com/pabloabaad25/WEB-CINES-INDIGO.git](https://github.com/pabloabaad25/WEB-CINES-INDIGO.git)
+   ```bash
+   git clone [https://github.com/pabloabaad25/WEB-CINES-INDIGO.git](https://github.com/pabloabaad25/WEB-CINES-INDIGO.git)
