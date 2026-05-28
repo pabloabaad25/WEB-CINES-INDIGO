@@ -2,7 +2,7 @@
 
 Aplicación web interactiva para la gestión de la cartelera, próximos estrenos (2027) y promociones. Desarrollada con React.
 
-## Instrucciones de Setup (Instalación local)
+## Instrucciones de Setup 
 
 Sigue estos pasos para ejecutar el proyecto:
 
